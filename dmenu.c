@@ -597,11 +597,13 @@ setup(void) {
 	swa.override_redirect = True;
 	swa.background_pixel = normcol->BG;
 	swa.event_mask = ExposureMask | KeyPressMask | VisibilityChangeMask;
-	win = XCreateWindow(dc->dpy, root, x, y, mw, mh, 0,
+	win = XCreateWindow(dc->dpy, root, x, y-2 /* move up by 2px */,
+	                    mw, mh,
+	                    2 /* border size */,
 	                    DefaultDepth(dc->dpy, screen), CopyFromParent,
 	                    DefaultVisual(dc->dpy, screen),
 	                    CWOverrideRedirect | CWBackPixel | CWEventMask, &swa);
-
+	XSetWindowBorder(dc->dpy, win, selcol->BG);
 	/* open input methods */
 	xim = XOpenIM(dc->dpy, NULL, NULL, NULL);
 	xic = XCreateIC(xim, XNInputStyle, XIMPreeditNothing | XIMStatusNothing,
