@@ -5,6 +5,8 @@ if [ -d "$cachedir" ]; then
 else
 	cache=$HOME/.dmenu_cache # if no xdg dir, fall back to dotfile in ~
 fi
+currXkbLayout=$(xkbswitch)
+[ "$currXkbLayout" != 0 ] && xkbswitch 0
 (
 	IFS=:
 	if stest -dqr -n "$cache" $PATH; then
@@ -12,4 +14,5 @@ fi
 	else
 		dmenu "$@" < "$cache"
 	fi
-) | ${SHELL:-"/bin/sh"} &
+	currXkbLayout=$(xkbswitch)
+) | ${SHELL:-"/bin/sh"} && xkbswitch $currXkbLayout &
