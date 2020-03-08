@@ -2,6 +2,21 @@ dmenu - dynamic menu
 ====================
 dmenu is an efficient dynamic menu for X.
 
+This is my personal fork of suckless dmenu 4.5 with several patches:
+
+- xft
+
+  FreeType fonts.
+
+- [xkbswitch](https://github.com/chinarulezzz/xkbswitch)
+
+  Switch to latin keyboard layout (or which you wish) before starting
+  dmenu, and switch back after exit.
+
+- borders
+
+  A little hack for my [dwm](https://chinarulezzz/dwm-6.0)
+  'Feng Shui' :)
 
 Requirements
 ------------
