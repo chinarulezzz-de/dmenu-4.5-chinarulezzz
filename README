@@ -2,13 +2,16 @@ dmenu - dynamic menu
 ====================
 dmenu is an efficient dynamic menu for X.
 
-This is my personal fork of suckless dmenu 4.5 with several patches:
+This is my fork of dmenu 4.5 which has a minimal functional code base
+that I want.
+
+This fork is extended with several patches:
 
 - xft
 
-  FreeType fonts.
+  FreeType fonts. No fallback. Minimal patch.
 
-- [xkbswitch](https://github.com/chinarulezzz/xkbswitch)
+- [xkbswitch](https://github.com/chinarulezzz-de/xkbswitch)
 
   Switch to latin keyboard layout (or which you wish) before starting
   dmenu, and switch back after exit.
