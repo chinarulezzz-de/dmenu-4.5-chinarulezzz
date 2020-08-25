@@ -11,12 +11,13 @@
 #include <fontconfig/fontconfig.h>
 #include <X11/Xft/Xft.h>
 #ifdef XINERAMA
-#include <X11/extensions/Xinerama.h>
+# include <X11/extensions/Xinerama.h>
 #endif
 #include "draw.h"
 
-#define INTERSECT(x,y,w,h,r)  (MAX(0, MIN((x)+(w),(r).x_org+(r).width)  - MAX((x),(r).x_org)) \
-                             * MAX(0, MIN((y)+(h),(r).y_org+(r).height) - MAX((y),(r).y_org)))
+#define INTERSECT(x,y,w,h,r) (\
+	MAX(0, MIN((x)+(w),(r).x_org+(r).width) - MAX((x),(r).x_org)) *\
+	MAX(0, MIN((y)+(h),(r).y_org+(r).height) - MAX((y),(r).y_org)))
 #define MIN(a,b)              ((a) < (b) ? (a) : (b))
 #define MAX(a,b)              ((a) > (b) ? (a) : (b))
 
