@@ -33,7 +33,7 @@ LIBS=		${BASELIB} ${X11LIB} -lc -lX11 -lXft ${XINERAMALIBS}
 CPPFLAGS=	-D_BSD_SOURCE -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
 CFLAGS+=	-std=c99 -pedantic -Wall -Wextra -Wformat ${INCS} ${CPPFLAGS}
 #CFLAGS=	-std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
-LDFLAGS=	-s ${LIBS}
+LDFLAGS+=	${LIBS}
 
 # compiler and linker
 CC?=		cc
